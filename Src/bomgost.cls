@@ -113,26 +113,28 @@
 % Для настройки заголовков таблиц и рисунков.
 \RequirePackage[tableposition=top]{caption}
 
-% Настройка вида подписи: [ Рис. номер ]. Нумерация рисунков и таблиц в пределах section. 
+% Настройка вида подписи: [ Рисунок номер ]. Нумерация рисунков и таблиц в пределах section. 
 \captionsetup{labelsep=space, hypcap=false, figurewithin=section, tablewithin=section} 
+
+% Настройка подписей к рисункам.
+\captionsetup[figure]{name=Рисунок} % Изменение подписи на "Рисунок"
 
 % Выравнивание подписей к таблицам справа.
 \captionsetup[table]{singlelinecheck=off, justification=raggedleft}
 
 %---------------------------------------------------------------------------------------
 % Настройка колонтитулов.
-% Номера страницы в правом верхнем углу.
+% Номера страницы в центре нижнего колонтитула.
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\thepage}
+\cfoot{\thepage} % Перемещение номера страницы вниз в центр
 \setlength{\headheight}{1.5em}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{%
     \fancyhf{}%
-    \rhead{\thepage}}
-
+    \cfoot{\thepage}} % Перемещение номера страницы вниз в центр для plain страницы
 
 %---------------------------------------------------------------------------------------
 % Настройка стилей для section, subsection и т. д. в документе.
